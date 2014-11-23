@@ -22,7 +22,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
-      Parse.initialize("J2Aoe4j2ht4F8Xz3E6uhS8NKRC9V3UpF2hjU2ToR", "lROdyJFYyYnxqcSQWeGVJQp8XBbRUNwlWTX3aSP1");
+      socket.emit('adduser', socket.rooms[0]);
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
