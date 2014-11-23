@@ -2,6 +2,34 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Parse = require('parse').Parse;
+var request = require('request');
+var cheerio = require('cheerio');
+var meta = {quote: ""};
+var url = 'http://www.brainyquote.com/quotes/topics/topic_motivational.html';
+var cnt = 0;
+var arr = [];
+
+
+request(url, function(err, resp, html) {
+	if (!err) {
+		var $ = cheerio.load(html);
+		$('.bqQuoteLink').filter(function() {
+			var data = $(this);
+			data = data.children().first().text().split('\n');
+			console.log(data[1])
+			// arr.push(data.split('\n'));
+
+			// meta = {quote: data};
+			// arr.push(meta);
+			// console.log(arr[1]);
+			for (i = 0; i < 50; i++) {
+				arr[i] = meta.quote[i];
+			}
+		})
+	}
+})
+
+
 
 Parse.initialize("J2Aoe4j2ht4F8Xz3E6uhS8NKRC9V3UpF2hjU2ToR", "lROdyJFYyYnxqcSQWeGVJQp8XBbRUNwlWTX3aSP1");
 var test = "lies lies lies ";
@@ -50,13 +78,14 @@ io.on('connection', function(socket){
 	// 	else if (socket.rooms == 1)
 	// 		room = socket.rooms[0];
 	// }
-
+	console.log(arr);
 	if (socket.rooms.length > 1){
 		io.to(socket.rooms[1]).emit('chat message', msg);
 		console.log(socket.rooms[1]);
 	}
 	else
 		io.to(socket.rooms[0]).emit('chat message', msg);
+	cnt++;
   	// io.to(socket.rooms[0]).emit('chat message', msg);
   	// io.to(socket.rooms[1]).emit('chat message', msg);
 

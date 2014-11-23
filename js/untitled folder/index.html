@@ -2,15 +2,6 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
-     <title>Talk To Me</title>
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-    <script src="./Scripts/jquery-1.9.1.min.js"></script>
-    <script src="./Scripts/bootstrap.min.js"></script>
-    <script src="./Scripts/jquery.jplayer.min.js"></script>    
-    <script type="text/javascript" src="./Scripts/jplayer.playlist.min.js"></script>
-    <script src="./Scripts/index.js"></script>    
-    <link href="/Content/bootstrap.min.css" rel="stylesheet">
-    <link href="hacks.css" rel="stylesheet">
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -20,37 +11,30 @@
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
-
     </style>
   </head>
   <body>
-    <button class="btn-sample" id="talk">Talk</button>
-    <button class="btn-sample" id="listen">Listen</button>
-    <div style="display: none;" id = "chat">
+    <button class="talk">Talk</button>
+    <button class="listen">Listen</button>
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" />
       <button type="button"> Chat!</button>
     </form>
-    </div>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
       socket.on('connect', function() {
-        // socket.emit('adduser', type);
+        socket.emit('adduser', type);
       });
       // socket.emit('bind', prompt("would you like to chat"));
-      $('button').click(function() {
+      $('.talk').click(function() {
         socket.emit('bind', 't');
       });
 
-      $('#talk').click(function() {
-        socket.emit('adduser', 't');
-      });
-
-      $('#listen').click(function() {
-        socket.emit('adduser', 'l');
+      $('.listen').click(function() {
+        socket.emit('bind', 'l');
       })
 
       $('form').submit(function(){
@@ -64,7 +48,3 @@
     </script>
   </body>
 </html>
-
-
-
-
