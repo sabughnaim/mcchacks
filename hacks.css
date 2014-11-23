@@ -1,0 +1,113 @@
+/*
+/* 
+Created by Sara Abu-Ghnaim
+WildHacks
+*/
+
+body {
+  font-family: 'Venera', Fallback, sans-serif;
+}
+
+h1{
+    color: white;
+    font-size: 10vw;
+}
+
+a{
+    font-size:60px;
+}
+.img_main{
+    width: 40%;
+    height: 40%;
+    max-width:200px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.countdown {
+    margin:50px 0px 60px 0px; 
+    color:white;
+    font-size:33px;
+    font-size:13vw;
+}
+.settings{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+   
+}
+.btn-sample { 
+  margin-top:6px;
+  margin-bottom:6px;
+  color: white; 
+  background: none; 
+  font-weight: bolder;
+  border-color: white;
+  box-shadow: 0px 1px 3px #5E5E5E;
+  cursor: pointer;
+} 
+ 
+.button 
+.btn-sample:focus, 
+.btn-sample:hover,
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #333;
+  font-weight: bolder;
+  border-color: white;
+  border-width: 5px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+} 
+
+.container-fluid{
+    height:100%;
+    width:100%;
+    text-align: center;
+}
+
+.colorChange{
+    background-color: #613A4F;
+    animation-name: cyl;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: cyl;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes cyl{
+    0%{background-color: #D76A55;}
+    25%{background-color: #CC3150;}
+    50%{background-color: #7B1C3C;}
+    75%{background-color: #59001C;}
+}
+@-webkit-keyframes cyl{
+    0%{background-color: #D76A55;}
+    25%{background-color: #CC3150;}
+    50%{background-color: #7B1C3C;}
+    75%{background-color: #59001C;}
+}
+
+
+.move-left {
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out; /** Firefox **/
+    -o-transition: all 2s ease-in-out; /** Opera **/
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);/** Safari & Chrome **/
+    -o-transform: rotate(360deg); /** Opera **/
+    -moz-transform: rotate(360deg); /** Firefox **/
+}
+
+@font-face {
+  font-family: 'Venera';
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Venera-500.otf') format('otf'), /* Modern Browsers */
+       url('Venera-500.otf')  format('Venera-500.otf'), /* Safari, Android, iOS */
+     
+}

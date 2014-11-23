@@ -1,0 +1,86 @@
+<%-- 
+    Document   : hackhome
+    Created on : Nov 23, 2014, 3:44:34 AM
+    Author     : saraabu-ghnaim
+--%>
+
+<!DOCTYPE html>
+<!--
+Created by Sara Abu-Ghnaim
+WildHacks
+-->
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+        
+    <link rel="shortcut icon" sizes="128x128" href="./pics/icon/ios/Icon-Small-50@2x.png">
+    <link rel="shortcut icon" sizes="196x196" href="./pics/icon/ios/Icon-Small-50@2x.png">
+    
+    <link rel="apple-touch-icon" href="./pics/icon/ios/Icon-Small-50@2x.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./pics/icon/ios/Icon-72.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./pics/icon/ios/iTunesArtwork.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./pics/icon/ios/iTunesArtwork@2x.png">
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Talk To Me</title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <script src="./Scripts/jquery-1.9.1.min.js"></script>
+    <script src="./Scripts/bootstrap.min.js"></script>
+    <script src="./Scripts/jquery.jplayer.min.js"></script>    
+    <script type="text/javascript" src="./Scripts/jplayer.playlist.min.js"></script>
+    <script src="./Scripts/index.js"></script>    
+    <link href="./Content/bootstrap.min.css" rel="stylesheet">
+    <link href="./hacks.css" rel="stylesheet">
+    
+</head> 
+<body class="colorChange">
+    <div class="container-fluid">
+        <h1 id="name">Talk To Me</h1>
+        <div id="home">
+            <button type="button" id="listener" class="btn btn-sample" onclick="socket.emit('adduser', 'l')">Listener</button>
+        </div>
+        <br>
+        <div>
+            <button type="button" id="speaker" class="btn btn-sample" onclick="socket.emit('adduser', 't')">Speaker</button>
+
+        </div>
+        <br>
+        <div>
+            <button type="button" id="speaker" class="btn btn-sample" onclick="socket.emit('bind', 't')">Happy Place</button>
+ </div>
+        <div>
+            <button type="button" id="start" class="btn btn-sample" onclick="">Start</button>
+        </div>
+            <button type="button" id="endButton" data-loading-text="Loading..." class="btn btn-lg btn-sample" style="margin-top:-40px; width: 80%"autocomplete="off" onclick="location.reload();">End Chat</button>
+           
+            </br>
+       	    </div>
+
+            
+
+        <div id="settings" class="settings">
+            <a href="#" onClick="revealSettings()"><img src="./pics/gear.png" width="40px" height="40px" /></a>
+       
+    </div>
+	<div id="jp_container_N" style="height:0px;">
+            <div class="jp-type-playlist" style="height:0px;">
+                <div id="jquery_jplayer_N" class="jp-jplayer"></div>                
+                <div class="jp-playlist" style="display:none">
+                    <ul>
+                        <!-- The method Playlist.displayPlaylist() uses this unordered list -->
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
