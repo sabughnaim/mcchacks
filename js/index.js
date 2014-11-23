@@ -51,7 +51,7 @@ io.on('connection', function(socket){
 	// 		room = socket.rooms[0];
 	// }
 
-	if (socket.rooms > 1){
+	if (socket.rooms.length > 1){
 		io.to(socket.rooms[1]).emit('chat message', msg);
 		console.log(socket.rooms[1]);
 	}
